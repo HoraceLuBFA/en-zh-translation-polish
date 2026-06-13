@@ -1,10 +1,12 @@
 ---
 name: en-zh-translation-polish
-description: |
-  把英文翻译成地道、流畅、无翻译腔的中文，并输出「英中对照」译文（每段英文原文 + 中文译文配对）。
-  内置叶子南《高级英汉翻译理论与实践》的英译汉润色方法论：先按文本“软硬/类型”定归化档位，再用意合优先、拆形合、病症诊断、音韵节奏、准确性质检逐层打磨。
-  触发场景：用户给一段/一篇英文要求「翻译成中文」「英译汉」「润色译文」「中英对照/英中对照」「翻得地道一点」「去翻译腔」「这段译文读着别扭帮我改」；或给出英文+现成中文译文要求评估/改写。
-  不适用于：翻译学术 PDF 论文（用 pdf-paper-zh-translation）；中译英；非翻译的纯中文写作润色；只要词义查询。
+description: >-
+  Translate English into idiomatic, fluent, translationese-free Chinese, with an
+  optional English-Chinese bilingual version that pairs each English source
+  paragraph with its translation. Use it for English-to-Chinese translation,
+  removing translationese, polishing an existing draft, or producing a bilingual
+  rendering. Not for Chinese-to-English, academic PDF papers (use
+  pdf-paper-zh-translation), pure Chinese writing polish, or single-word lookups.
 license: MIT
 version: 1.0.0
 tags: [translation, chinese, english-to-chinese, 英译汉, 润色, 中英对照, localization]
