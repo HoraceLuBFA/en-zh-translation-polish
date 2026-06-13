@@ -5,8 +5,8 @@ description: >-
   optional English-Chinese bilingual version that pairs each English source
   paragraph with its translation. Use it for English-to-Chinese translation,
   removing translationese, polishing an existing draft, or producing a bilingual
-  rendering. Not for Chinese-to-English, academic PDF papers (use
-  pdf-paper-zh-translation), pure Chinese writing polish, or single-word lookups.
+  rendering. Not for Chinese-to-English, pure Chinese writing polish, or
+  single-word lookups.
 license: MIT
 version: 1.0.0
 tags: [translation, chinese, english-to-chinese, 英译汉, 润色, 中英对照, localization]
@@ -15,7 +15,7 @@ allowed-tools: Read Write Edit Bash
 
 # 英译汉翻译润色 (English→Chinese Translate & Polish)
 
-把英文译成**地道中文**并产出**英中对照**译文。核心信条（叶子南）：英译汉最致命的错误是把英语的「形合」结构迁移进汉语造成翻译腔；好译文 = **以读者为中心、按文本类型调节归化尺度、发挥汉语意合优势、兼顾音韵节奏**。
+把英文译成**地道中文**并产出**英中对照**译文。核心信条（叶子南）：英译汉最致命的错误是把英语的“形合”结构迁移进汉语造成翻译腔；好译文 = **以读者为中心、按文本类型调节归化尺度、发挥汉语意合优势、兼顾音韵节奏**。
 
 ## 交付物
 
@@ -47,7 +47,7 @@ allowed-tools: Read Write Edit Bash
 - 别忘**文本外因素**：翻译目的、读者是谁。档位一句话写进给用户的说明里。
 
 ### 阶段 1 — 理解 → 脱离语言外壳
-读懂原文后，**抛开英文词句**，在脑中形成意义/图像，再用中文重构（不要在词面上挪移）。遇到结构纠缠的短语用「解包袱法」理清隐含语义关系（见 `reference/techniques.md`）。
+读懂原文后，**抛开英文词句**，在脑中形成意义/图像，再用中文重构（不要在词面上挪移）。遇到结构纠缠的短语用“解包袱法”理清隐含语义关系（见 `reference/techniques.md`）。
 
 ### 阶段 2 — 按档位初译
 以**意合优先**起译：能不用连接词就不用，长句拆成流水短句，被动转主动，定语别堆在名词前。
@@ -58,7 +58,7 @@ allowed-tools: Read Write Edit Bash
 3. **隐喻决策** — 基本/图像图式隐喻（旅程、大小、冷热…）可直译；文化专属隐喻糅合或舍弃；直译≠应直译，看档位（`reference/text-analysis-and-qa.md` 小节 B）。
 
 ### 阶段 4 — 音韵节奏打磨
-读出声。利用双音节/四字结构、「偶字易适奇字难平」、对偶排比；并列词组尽量配偶字（“飞机小，便宜”→“体积不大，造价便宜”）。**但软文本才放开；硬文本点到为止。**
+读出声。利用双音节/四字结构、“偶字易适奇字难平”、对偶排比；并列词组尽量配偶字（“飞机小，便宜”→“体积不大，造价便宜”）。**但软文本才放开；硬文本点到为止。**
 
 ### 阶段 5 — 准确性质检
 对照 `reference/text-analysis-and-qa.md` 小节 C 逐项核：擅自改结构/移焦点、漏译情态虚词、擅自添词、搭配、指代、逻辑关系、专名术语数字、语域对齐。
@@ -67,12 +67,12 @@ allowed-tools: Read Write Edit Bash
 ### 阶段 6 — 中文标点规范化 ★（机械执行，落盘后必跑）
 中文译文里的标点必须是中文全角，不能残留英文半角（译者最易忽略，逐字凭眼力一定会漏）。规则：
 - `, : ; ? !` → `，：；？！`；句末用 `。`；并列用顿号 `、`；破折号 `——`；省略号 `……`。
-- 包裹中文内容（含人名/术语原文注，如「道德受体地位(moral patienthood)」）的圆括号 `( )` → 全角 `（ ）`。
-- 双引号统一为中文 `“ ”`（内层 `‘ ’`）。
+- 圆括号 `( )` → 全角 `（ ）`：**仅当紧邻中文字符时才转**（包裹中文内容、含人名/术语原文注，如 "道德受体地位(moral patienthood)"）；纯英文括注（如电影演职 `(Harold D. Schuster, 1937)`）保持半角。
+- 双引号统一为中文全角 `" "`（内层 `' '`）；直角引号 `「」`、`『』` 一并归一为 `" "` / `' '`。
 
 **以下一律保持半角，绝不转：** ① 英文原文 blockquote（`> ` 行）整段不动；② Markdown 链接 `[文字](url)` 的括号与 URL；③ 中文行内嵌入的整句/词组英文，其内部标点——如被引用的英文原句 `…one nation under God, indivisible, …`；④ 数字/缩写/版本号里的点：`4.3`、`Word 2010`、`A.I.`、`L. M.`；⑤ 代码/公式块。
 
-判定原理：**逗号类只在紧邻中文字符（前或后）时才转**；圆括号则「先护住链接，余者全转」。落盘后跑下面脚本机械归一并自检（`残留` 必须为 0）：
+判定原理：**逗号类与圆括号都只在紧邻中文字符（前或后）时才转**；有方向的引号（“”「」‘’『』）按方向直接映射，只有歧义的直双引号 `"` 才靠交替判定开闭。落盘后跑下面脚本机械归一并自检（`残留` 必须为 0）：
 
 ```bash
 python3 - "<名称> 翻译(中英对照).md" <<'PY'
@@ -84,35 +84,42 @@ def is_cjk(c):
     if not c: return False
     o = ord(c)
     return (0x3400<=o<=0x9fff) or (0x3000<=o<=0x303f) or (0xff00<=o<=0xffef) or (c in CJK_EXTRA)
-SMAP = {',':'，', ';':'；', ':':'：', '?':'？', '!':'！'}
+SMAP = {',':'，', ';':'；', ':':'：', '?':'？', '!':'！', '(':'（', ')':'）'}
+OPEN2 = '“「'; CLOSE2 = '”」'; OPEN1 = '‘『'; CLOSE1 = '’』'
 LINK = re.compile(r'\[[^\]]*\]\([^)]*\)')
 def fix(line):
     store=[]
     line = LINK.sub(lambda m: store.append(m.group(0)) or '\x00%d\x00'%(len(store)-1), line)
-    out=[]; op=True                      # 双引号交替归一: open “ / close ”
+    out=[]; sop=True                     # 有方向引号直接映射; 仅歧义直双引号 " 靠交替定开闭
     for c in line:
-        if c in '"“”': out.append('“' if op else '”'); op=not op
+        if c == '"': out.append('“' if sop else '”'); sop = not sop
+        elif c in OPEN2: out.append('“')
+        elif c in CLOSE2: out.append('”')
+        elif c in OPEN1: out.append('‘')
+        elif c in CLOSE1: out.append('’')
         else: out.append(c)
     ch=out; n=len(ch)
-    for i,c in enumerate(ch):
+    for i,c in enumerate(ch):            # 逗号类 + 圆括号: 紧邻中文才转全角
         if c in SMAP and (is_cjk(ch[i-1] if i else '') or is_cjk(ch[i+1] if i+1<n else '')):
             ch[i]=SMAP[c]
-    line=''.join(ch).replace('(','（').replace(')','）')
+    line=''.join(ch)
     return re.sub('\x00(\\d+)\x00', lambda m: store[int(m.group(1))], line)
 def skip(ln):
     s=ln.strip(); return s=='' or ln.lstrip().startswith('>') or s=='---'
 res=[ln if skip(ln) else fix(ln) for ln in lines]
 open(src,'w',encoding='utf-8').write('\n'.join(res))
-bad=sum(1 for ln in res if not skip(ln)
-        for m in re.finditer(r'[,;:?!]', ln)
-        if is_cjk(ln[m.start()-1] if m.start() else '') or is_cjk(ln[m.start()+1] if m.start()+1<len(ln) else ''))
+def residual(ln):
+    t = LINK.sub('', ln)                # 排除 markdown 链接内的括号/标点, 免误报
+    return sum(1 for m in re.finditer(r'[,;:?!()]', t)
+               if is_cjk(t[m.start()-1] if m.start() else '') or is_cjk(t[m.start()+1] if m.start()+1<len(t) else ''))
+bad=sum(residual(ln) for ln in res if not skip(ln))
 print('残留:', bad)
 PY
 ```
 聊天里直接给的小段对照（未落盘）同样要手动套用上述规则。
 
 ### 阶段 7 — 输出英中对照
-按下方格式逐段配对；成篇则写文件；给用户附一句「档位判定 + 主要润色取舍」。
+按下方格式逐段配对；成篇则写文件；给用户附一句“档位判定 + 主要润色取舍”。
 
 ## 英中对照输出格式
 
@@ -158,5 +165,3 @@ The confidence that the West would remain a dominant force in the 21st century i
 本 skill 的代码、提示词与组织方式以 **MIT 许可**发布，可自由使用、修改、再分发。
 
 方法论与判例蒸馏、转述自叶子南《高级英汉翻译理论与实践》（第4版，清华大学出版社，2020），在此谨致谢忱。`reference/` 三张表中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
-
-与 `pdf-paper-zh-translation` 的分工：那个专做学术 PDF 论文→中文 Markdown；本 skill 做通用英文→地道中文 + 润色。

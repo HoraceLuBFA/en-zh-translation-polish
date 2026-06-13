@@ -160,7 +160,7 @@
 - 译法：“谢谢您的忠告”（两个同义名词合并为一个）
 
 - English: "Montag shook his head. He looked at a blank wall. The girl's face was there, really quite beautiful in memory"
-- 译法：“蒙特咎摇摇头。注视白墙，他仿佛看见那姑娘的肖像；真奇怪，印在他头脑里的肖像的确很美”（三句并两句）
+- 译法：“蒙塔格摇摇头。注视白墙，他仿佛看见那姑娘的肖像；真奇怪，印在他头脑里的肖像的确很美”（三句并两句）
 
 ### 10. 语序调整/移位 (Shifting)
 

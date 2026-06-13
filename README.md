@@ -2,7 +2,7 @@
 
 # en-zh-translation-polish · 英译汉翻译润色
 
-### 把英文译成地道、无翻译腔的中文，并产出逐段「英中对照」
+### 把英文译成地道、无翻译腔的中文，并产出逐段“英中对照”
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
 [![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
@@ -16,7 +16,7 @@
 
 本 skill 把叶子南《高级英汉翻译理论与实践》（第4版）的英译汉方法论，工程化为一条英译中流水线。核心信条如下：
 
-> 英译汉最致命的错误，是把英语的「形合」结构迁移进汉语，造成翻译腔。
+> 英译汉最致命的错误，是把英语的“形合”结构迁移进汉语，造成翻译腔。
 
 据此，地道的译文应当做到四点：
 
@@ -25,12 +25,12 @@
 - **发挥汉语意合之长**——拆解形合、精简连接词、被动转主动、长定语后移、长句化为流水短句；
 - **兼顾音韵节奏**——善用双音节／四字结构与对偶排比，点到为止，以自然为度。
 
-本 skill 据此为每一段译文都走完「定档 → 脱壳 → 意合初译 → 病症诊断 → 音韵打磨 → 准确质检 → 标点规范」的完整闭环，逐段打磨之后再交付。
+本 skill 据此为每一段译文都走完“定档 → 脱壳 → 意合初译 → 病症诊断 → 音韵打磨 → 准确质检 → 标点规范”的完整闭环，逐段打磨之后再交付。
 
 ## 适用场景
 
 - **消除机翻与直译的翻译腔**——形合迁移、的的不休、抽象名词作主语、被动滥用、习语硬译等顽疾，逐条识别并修正；
-- **统一改稿标准**——三张可查证的参考表，把「改哪里、怎么改、改到多狠」固定为可复用的判据；
+- **统一改稿标准**——三张可查证的参考表，把“改哪里、怎么改、改到多狠”固定为可复用的判据；
 - **维护中英对照**——以对照文件为单一真源，全中文版由脚本派生，两版始终一致；
 - **规范中文标点**——内置标点归一脚本，译文全角标点零残留，英文、链接、数字与代码均不受影响。
 
@@ -40,7 +40,7 @@
 
 - **归化有度**——保留原文应有的风格、术语精度与文化标记；西化是一个连续体，硬文本与永久价值文本能容纳更多异化；
 - **辞藻克制**——音韵节奏只是手段，四字结构适可而止；
-- 拿不准「改到多狠」时，回到阶段 0 的档位：自由度越低，越克制。
+- 拿不准“改到多狠”时，回到阶段 0 的档位：自由度越低，越克制。
 
 底线：放松准确性 ≠ 理解错误。**理解错误没有原谅的余地。**
 
@@ -57,7 +57,7 @@
 | 4 | 音韵节奏打磨 | 双音节／四字／对偶；软文本放开，硬文本点到为止 |
 | 5 | 准确性质检 | 核结构、情态虚词、增减词、搭配、指代、术语、语域 |
 | 6 | 中文标点规范化 | 脚本机械归一全角标点，自检残留为 0 |
-| 7 | 输出英中对照 | 逐段配对，附一句「档位判定 + 主要润色取舍」 |
+| 7 | 输出英中对照 | 逐段配对，附一句“档位判定 + 主要润色取舍” |
 
 支撑工作流的三张参考表（位于 `reference/`，均带原文引用与英汉译例）：
 
@@ -67,31 +67,41 @@
 
 ## 安装
 
-一行安装（推荐）：
+**方式一 · 一行命令（推荐）**
 
 ```bash
 npx skills add -g HoraceLuBFA/en-zh-translation-polish
 ```
 
-验证：
+**方式二 · 交给 agent 安装**
+
+把仓库链接连同一句话发给你的编码 agent（Claude Code / Codex / Gemini CLI 等），让它替你 clone 到共享 skill 目录：
+
+> 请把这个 skill 装到我的共享 skill 目录 `~/.agents/skills/`（克隆为 `~/.agents/skills/en-zh-translation-polish/`），装完验证 `SKILL.md` 存在：https://github.com/HoraceLuBFA/en-zh-translation-polish
+
+**方式三 · 手动 clone**
+
+```bash
+git clone https://github.com/HoraceLuBFA/en-zh-translation-polish.git ~/.agents/skills/en-zh-translation-polish
+```
+
+安装后验证：
 
 ```bash
 test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 ```
 
-> [`npx skills`](https://github.com/vercel-labs/skills) 会把 skill 安装到 `~/.agents/skills/`——多个 agent 共用的 skill 目录，并自动建好各 agent 所需的软链。
->
-> 手动安装：将本仓库克隆到你的 skill 目录（如 `~/.agents/skills/en-zh-translation-polish/`）即可。
+> [`npx skills`](https://github.com/vercel-labs/skills) 会把 skill 安装到 `~/.agents/skills/`——多个 agent 共用的 skill 目录，并自动建好各 agent 所需的软链；以方式二、三装到该目录后，各 agent 同样能识别。
 
 ## 使用方式
 
 **自然语言**——直接提出需求即可，支持自动触发的 agent 会据 `SKILL.md` 的 `description` 字段加载本 skill。常见说法：
 
-- 「把这段英文翻译成中文，要地道一点：……」
-- 「这段译文太翻译腔了，帮我去翻译腔。」
-- 「翻译这篇英文短文，我要中英对照的版本。」
-- 「我已用机器把这篇英文译成中文，帮我润色到像人写的，保留英文对照。」（译后编辑 MTPE 同样适用）
-- 「translate this English paragraph into natural Chinese.」
+- “把这段英文翻译成中文，要地道一点：……”
+- “这段译文太翻译腔了，帮我去翻译腔。”
+- “翻译这篇英文短文，我要中英对照的版本。”
+- “我已用机器把这篇英文译成中文，帮我润色到像人写的，保留英文对照。”（译后编辑 MTPE 同样适用）
+- “translate this English paragraph into natural Chinese.”
 
 **命令显式调用**——直接点名本 skill，把文件或文本作为参数传入：
 

@@ -41,19 +41,12 @@
     {
       "id": "should-not-trigger-02",
       "type": "should_not_trigger",
-      "prompt": "翻译这篇 PDF 学术论文成中文，要中英对照和全中文两版",
-      "expected_behavior": "不激活本 skill，应交给 pdf-paper-zh-translation（学术 PDF 论文专用，处理公式/图表/参考文献）。",
-      "notes": "诱饵：同是英译汉+中英对照，但对象是学术 PDF 论文，归属姊妹 skill。"
-    },
-    {
-      "id": "should-not-trigger-03",
-      "type": "should_not_trigger",
       "prompt": "这段中文文案读着不通顺，帮我润色得更有文采（纯中文，无外文原文）",
       "expected_behavior": "不激活本 skill。这是中文写作润色，不涉及英译汉，无英文源文本。",
       "notes": "诱饵：有'润色'但无翻译、无英文。"
     },
     {
-      "id": "should-not-trigger-04",
+      "id": "should-not-trigger-03",
       "type": "should_not_trigger",
       "prompt": "frugal 这个英文单词中文什么意思？",
       "expected_behavior": "不激活本 skill，直接答词义即可，不必走翻译润色工作流。",
@@ -72,8 +65,15 @@
       "prompt": "翻译这份英文软件许可协议，要严谨准确，别给我自由发挥",
       "expected_behavior": "应激活本 skill，但阶段 0 应判为硬文本（自由度 1-3），明确采取准确>流畅、贴原文、术语固定译法、克制音韵润色的策略，并在说明里点出。",
       "notes": "边界：适用但档位极硬，考验 skill 是否会克制归化、不滥用四字结构。"
+    },
+    {
+      "id": "edge-03",
+      "type": "edge_case",
+      "prompt": "翻译这篇英文 PDF 论文成中文，要中英对照",
+      "expected_behavior": "应激活本 skill。PDF 只是载体：先抽取文本（Read / pdftotext 等）、清理页眉页脚页码等噪声，再走完整工作流，按段落输出英文 blockquote + 中文译文的对照。本 skill 以散文/论述文本见长；遇到公式、图表、参考文献按现状尽力保留，不做专门的版式还原，必要时向用户说明这一局限。",
+      "notes": "边界：载体是 PDF，但方向仍是英译汉 + 中英对照，正属本 skill 所长，应处理而非拒绝；提示文本抽取与散文导向的局限即可。"
     }
   ],
   "minimum_pass_rate": 0.8,
-  "notes": "4 条 should_trigger + 4 条 should_not_trigger + 2 条 edge_case。所有 should_not_trigger 必须通过（诱饵容错为 0），重点区分：中译英、学术PDF（姊妹skill）、纯中文润色、查词。"
+  "notes": "4 条 should_trigger + 3 条 should_not_trigger + 3 条 edge_case。所有 should_not_trigger 必须通过（诱饵容错为 0），重点区分：中译英、纯中文润色、查词。PDF 英文论文属可处理的边界——载体不同，方向仍是英译汉，应接住而非排除。"
 }
