@@ -113,6 +113,8 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 $en-zh-translation-polish path/to/article.md
 ```
 
+> ⚠️ **想要纯中文输出**：本 skill **默认产出英中对照**。若只要中文译文，请在 prompt 里显式强调，例如“只要中文，不要英文对照”“仅输出译文”——否则会默认给对照版。
+
 ## 交付物
 
 1. **`<名称> 翻译(中英对照).md`**——单一真源：每段英文原文作为 blockquote，其下紧接中文译文；
