@@ -73,11 +73,13 @@
 npx skills add -g HoraceLuBFA/en-zh-translation-polish
 ```
 
+> [`npx skills`](https://github.com/vercel-labs/skills) 会把 skill 安装到 `~/.agents/skills/`——多个 agent 共用的 skill 目录，并自动建好各 agent 所需的软链。
+
 **方式二 · 交给 agent 安装**
 
-把仓库链接连同一句话发给你的编码 agent（Claude Code / Codex / Gemini CLI 等），让它替你 clone 到共享 skill 目录：
+把仓库链接发给你的编码 agent（Claude Code / Codex / Gemini CLI 等），一句"帮我安装这个 skill"即可：
 
-> 请把这个 skill 装到我的共享 skill 目录 `~/.agents/skills/`（克隆为 `~/.agents/skills/en-zh-translation-polish/`），装完验证 `SKILL.md` 存在：https://github.com/HoraceLuBFA/en-zh-translation-polish
+> 帮我安装这个 skill：https://github.com/HoraceLuBFA/en-zh-translation-polish
 
 **方式三 · 手动 clone**
 
@@ -90,8 +92,6 @@ git clone https://github.com/HoraceLuBFA/en-zh-translation-polish.git ~/.agents/
 ```bash
 test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 ```
-
-> [`npx skills`](https://github.com/vercel-labs/skills) 会把 skill 安装到 `~/.agents/skills/`——多个 agent 共用的 skill 目录，并自动建好各 agent 所需的软链；以方式二、三装到该目录后，各 agent 同样能识别。
 
 ## 使用方式
 
