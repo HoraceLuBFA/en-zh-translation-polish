@@ -8,6 +8,8 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
+**[English](./README.en.md) | 中文**
+
 </div>
 
 ---
