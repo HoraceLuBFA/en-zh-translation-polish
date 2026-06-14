@@ -98,10 +98,8 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 **自然语言**——直接提出需求即可，支持自动触发的 agent 会据 `SKILL.md` 的 `description` 字段加载本 skill。常见说法：
 
 - “把这段英文翻译成中文，要地道一点：……”
-- “这段译文太翻译腔了，帮我去翻译腔。”
 - “翻译这篇英文短文，我要中英对照的版本。”
-- “我已用机器把这篇英文译成中文，帮我润色到像人写的，保留英文对照。”（译后编辑 MTPE 同样适用）
-- “translate this English paragraph into natural Chinese.”
+- “请帮我翻译这篇科技论文／新闻稿／小说。”
 
 **命令显式调用**——直接点名本 skill，把文件或文本作为参数传入：
 
@@ -149,3 +147,5 @@ en-zh-translation-polish/
 本 skill 的代码、提示词与组织方式以 **MIT 许可**发布，可自由使用、修改、再分发，详见 [LICENSE](./LICENSE)。
 
 方法论与判例蒸馏、转述自 **叶子南《高级英汉翻译理论与实践》（第4版，清华大学出版社，2020）**，在此谨致谢忱。`reference/` 中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
+
+本 skill 借助 [cangjie-skill](https://github.com/kangarooking/cangjie-skill)（将书籍方法论蒸馏为可调用 AI skill 的开源拆书流水线）生成，一并致谢。
