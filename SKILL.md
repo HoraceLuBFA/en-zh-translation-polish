@@ -1,10 +1,10 @@
 ---
 name: en-zh-translation-polish
 description: >-
-  Translate English into idiomatic, fluent, translationese-free Chinese, with an
-  optional English-Chinese bilingual version that pairs each English source
-  paragraph with its translation. Use it for English-to-Chinese translation,
-  removing translationese, polishing an existing draft, or producing a bilingual
+  Translates English into idiomatic, translationese-free Chinese, optionally as
+  an English-Chinese bilingual version pairing each source paragraph with its
+  translation. Use when the user wants to 翻译成中文 / 英译汉, 去翻译腔/润色译文
+  (remove translationese, polish a draft), or produce a 中英对照/英中对照 bilingual
   rendering. Not for Chinese-to-English, pure Chinese writing polish, or
   single-word lookups.
 license: MIT
