@@ -129,6 +129,10 @@ $en-zh-translation-polish path/to/article.md
 
 *(Stage 0 call: hard-leaning / political commentary, freedom ≈ 3, accuracy first, restrained rhythm.)*
 
+## Sister skill
+
+For the opposite direction (Chinese → English), use **[zh-en-translation-polish](https://github.com/HoraceLuBFA/zh-en-translation-polish)** — distilled from Joan Pinkham's *The Translator's Guide to Chinglish* and Lu Guoqiang's *Classic Examples of Converting Chinese to English*, it produces idiomatic, Chinglish-free English with bilingual pairing. The two skills are structural mirrors, one per direction.
+
 ## Repository layout
 
 ```text

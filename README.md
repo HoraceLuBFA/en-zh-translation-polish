@@ -129,6 +129,10 @@ $en-zh-translation-polish path/to/article.md
 
 *（阶段 0 判定：偏硬／政论，自由度≈3，准确优先、克制音韵。）*
 
+## 姊妹 skill
+
+反方向（中→英）请用 **[zh-en-translation-polish](https://github.com/HoraceLuBFA/zh-en-translation-polish)**——蒸馏自 Joan Pinkham《中式英语之鉴》与陆国强《汉译英常用表达式经典惯例》，把中文译成地道、无中式英语的英文，并产出汉英对照。两个 skill 结构对称、互为镜像，各管一个方向。
+
 ## 仓库结构
 
 ```text
