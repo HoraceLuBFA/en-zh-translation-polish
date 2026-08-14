@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title description">
+  <title id="title">Star history for HoraceLuBFA/en-zh-translation-polish</title>
+  <desc id="description">100 stars from 2026-06-13 to 2026-08-12</desc>
+  <style>
+    :root { color-scheme: light dark; }
+    .background { fill: #ffffff; }
+    .grid { stroke: #d8dee4; stroke-width: 1; }
+    .axis-label { fill: #57606a; font: 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .title { fill: #1f2328; font: 600 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .subtitle { fill: #57606a; font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .area { fill: #0969da; opacity: 0.14; }
+    .line { fill: none; stroke: #0969da; stroke-width: 3; stroke-linejoin: round; }
+    .endpoint { fill: #0969da; }
+    .count { fill: #1f2328; font: 600 14px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0d1117; }
+      .grid { stroke: #30363d; }
+      .axis-label, .subtitle { fill: #8b949e; }
+      .title, .count { fill: #f0f6fc; }
+      .area { fill: #58a6ff; opacity: 0.18; }
+      .line { stroke: #58a6ff; }
+      .endpoint { fill: #58a6ff; }
+    }
+  </style>
+  <rect class="background" width="900" height="520" rx="10" />
+  <text class="title" x="76" y="34">Star History</text>
+  <text class="subtitle" x="76" y="58">HoraceLuBFA/en-zh-translation-polish</text>
+  <line class="grid" x1="76" y1="454.00" x2="866" y2="454.00" />
+  <text class="axis-label" x="64" y="459" text-anchor="end">0</text>
+  <line class="grid" x1="76" y1="378.40" x2="866" y2="378.40" />
+  <text class="axis-label" x="64" y="383.4" text-anchor="end">20</text>
+  <line class="grid" x1="76" y1="302.80" x2="866" y2="302.80" />
+  <text class="axis-label" x="64" y="307.8" text-anchor="end">40</text>
+  <line class="grid" x1="76" y1="227.20" x2="866" y2="227.20" />
+  <text class="axis-label" x="64" y="232.2" text-anchor="end">60</text>
+  <line class="grid" x1="76" y1="151.60" x2="866" y2="151.60" />
+  <text class="axis-label" x="64" y="156.6" text-anchor="end">80</text>
+  <line class="grid" x1="76" y1="76.00" x2="866" y2="76.00" />
+  <text class="axis-label" x="64" y="81" text-anchor="end">100</text>
+  <line class="grid" x1="76.00" y1="76" x2="76.00" y2="454" />
+  <text class="axis-label" x="76.00" y="482" text-anchor="middle">2026-06-13</text>
+  <line class="grid" x1="273.50" y1="76" x2="273.50" y2="454" />
+  <text class="axis-label" x="273.50" y="482" text-anchor="middle">2026-06-28</text>
+  <line class="grid" x1="471.00" y1="76" x2="471.00" y2="454" />
+  <text class="axis-label" x="471.00" y="482" text-anchor="middle">2026-07-13</text>
+  <line class="grid" x1="668.50" y1="76" x2="668.50" y2="454" />
+  <text class="axis-label" x="668.50" y="482" text-anchor="middle">2026-07-28</text>
+  <line class="grid" x1="866.00" y1="76" x2="866.00" y2="454" />
+  <text class="axis-label" x="866.00" y="482" text-anchor="middle">2026-08-12</text>
+  <path class="area" d="M 76.00 454.00 L 76.00 454.00 L 76.00 446.44 L 89.17 446.44 L 89.17 363.28 L 102.33 363.28 L 102.33 351.94 L 115.50 351.94 L 115.50 340.60 L 128.67 340.60 L 128.67 219.64 L 141.83 219.64 L 141.83 204.52 L 155.00 204.52 L 155.00 196.96 L 181.33 196.96 L 181.33 193.18 L 194.50 193.18 L 194.50 189.40 L 207.67 189.40 L 207.67 185.62 L 220.83 185.62 L 220.83 181.84 L 234.00 181.84 L 234.00 178.06 L 286.67 178.06 L 286.67 174.28 L 326.17 174.28 L 326.17 170.50 L 339.33 170.50 L 339.33 162.94 L 352.50 162.94 L 352.50 159.16 L 378.83 159.16 L 378.83 155.38 L 392.00 155.38 L 392.00 151.60 L 405.17 151.60 L 405.17 147.82 L 431.50 147.82 L 431.50 144.04 L 484.17 144.04 L 484.17 140.26 L 497.33 140.26 L 497.33 136.48 L 563.17 136.48 L 563.17 132.70 L 589.50 132.70 L 589.50 125.14 L 602.67 125.14 L 602.67 113.80 L 655.33 113.80 L 655.33 102.46 L 681.67 102.46 L 681.67 98.68 L 721.17 98.68 L 721.17 94.90 L 773.83 94.90 L 773.83 87.34 L 826.50 87.34 L 826.50 83.56 L 852.83 83.56 L 852.83 79.78 L 866.00 79.78 L 866.00 76.00 L 866.00 76.00 L 866.00 454.00 L 76.00 454.00 Z" />
+  <path class="line" d="M 76.00 454.00 L 76.00 454.00 L 76.00 446.44 L 89.17 446.44 L 89.17 363.28 L 102.33 363.28 L 102.33 351.94 L 115.50 351.94 L 115.50 340.60 L 128.67 340.60 L 128.67 219.64 L 141.83 219.64 L 141.83 204.52 L 155.00 204.52 L 155.00 196.96 L 181.33 196.96 L 181.33 193.18 L 194.50 193.18 L 194.50 189.40 L 207.67 189.40 L 207.67 185.62 L 220.83 185.62 L 220.83 181.84 L 234.00 181.84 L 234.00 178.06 L 286.67 178.06 L 286.67 174.28 L 326.17 174.28 L 326.17 170.50 L 339.33 170.50 L 339.33 162.94 L 352.50 162.94 L 352.50 159.16 L 378.83 159.16 L 378.83 155.38 L 392.00 155.38 L 392.00 151.60 L 405.17 151.60 L 405.17 147.82 L 431.50 147.82 L 431.50 144.04 L 484.17 144.04 L 484.17 140.26 L 497.33 140.26 L 497.33 136.48 L 563.17 136.48 L 563.17 132.70 L 589.50 132.70 L 589.50 125.14 L 602.67 125.14 L 602.67 113.80 L 655.33 113.80 L 655.33 102.46 L 681.67 102.46 L 681.67 98.68 L 721.17 98.68 L 721.17 94.90 L 773.83 94.90 L 773.83 87.34 L 826.50 87.34 L 826.50 83.56 L 852.83 83.56 L 852.83 79.78 L 866.00 79.78 L 866.00 76.00 L 866.00 76.00" />
+  <circle class="endpoint" cx="866.00" cy="76.00" r="5" />
+  <text class="count" x="866.00" y="64.00" text-anchor="end">100 stars</text>
+</svg>

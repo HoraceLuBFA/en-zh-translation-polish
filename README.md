@@ -158,4 +158,4 @@ en-zh-translation-polish/
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=HoraceLuBFA/en-zh-translation-polish&type=Date)](https://star-history.com/#HoraceLuBFA/en-zh-translation-polish&Date)
+[![Star History Chart](./assets/star-history.svg)](https://github.com/HoraceLuBFA/en-zh-translation-polish/stargazers)
