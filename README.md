@@ -155,3 +155,7 @@ en-zh-translation-polish/
 方法论与判例蒸馏、转述自 **叶子南《高级英汉翻译理论与实践》（第4版，清华大学出版社，2020）**，在此谨致谢忱。`reference/` 中的少量引文系评注与教学目的的简短摘引，著作权归原作者与出版社所有；本 skill 仅为方法工具，不能替代原著，建议系统学习者购买正版。
 
 本 skill 借助 [cangjie-skill](https://github.com/kangarooking/cangjie-skill)（将书籍方法论蒸馏为可调用 AI skill 的开源拆书流水线）生成，一并致谢。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=HoraceLuBFA/en-zh-translation-polish&type=Date)](https://star-history.com/#HoraceLuBFA/en-zh-translation-polish&Date)
