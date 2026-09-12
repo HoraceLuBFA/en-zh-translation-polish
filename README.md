@@ -5,7 +5,7 @@
 ### 把英文译成地道、无翻译腔的中文，并产出逐段“英中对照”
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **[English](./README.en.md) | 中文**
@@ -27,7 +27,7 @@
 - **发挥汉语意合之长**——拆解形合、精简连接词、被动转主动、长定语后移、长句化为流水短句；
 - **兼顾音韵节奏**——善用双音节／四字结构与对偶排比，点到为止，以自然为度。
 
-本 skill 据此为每一段译文都走完“定档 → 脱壳 → 意合初译 → 病症诊断 → 音韵打磨 → 准确质检 → 标点规范”的完整闭环，逐段打磨之后再交付。
+本 skill 以文本定档、意义理解、中文重构、润色诊断、准确质检和标点规范支持翻译。按文本类型选择相关检查；短文本无需展示完整诊断过程或通读全部参考表，准确性与保真要求继续适用。
 
 ## 适用场景
 
@@ -48,7 +48,7 @@
 
 ## 工作流
 
-按序执行，每段译文走完全部阶段后再交付。
+下表说明完整工作流。短段落可直接在聊天中交付；全文或项目翻译沿用文件交付契约。用户已指定纯译文、双语或目标文件时按其要求执行，无需重复确认。
 
 | 阶段 | 名称 | 做什么 |
 |---|---|---|
@@ -101,7 +101,9 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 
 - “把这段英文翻译成中文，要地道一点：……”
 - “翻译这篇英文短文，我要中英对照的版本。”
-- “请帮我翻译这篇科技论文／新闻稿／小说。”
+- “请帮我翻译这段技术说明／新闻稿／小说片段。”
+
+需要处理图表、参考文献和完整结构的论文翻译，使用 `pdf-paper-zh-translation`。本技能用于英文段落翻译，以及对照英文原文润色已有中文译稿。
 
 **命令显式调用**——直接点名本 skill，把文件或文本作为参数传入：
 
@@ -116,6 +118,8 @@ $en-zh-translation-polish path/to/article.md
 > ⚠️ **想要纯中文输出**：本 skill **默认产出英中对照**。若只要中文译文，请在 prompt 里显式强调，例如“只要中文，不要英文对照”“仅输出译文”——否则会默认给对照版。
 
 ## 交付物
+
+以下为全文或项目翻译的默认文件交付。聊天短段落直接回复；用户明确指定的单语、双语或文件形式优先。
 
 1. **`<名称> 翻译(中英对照).md`**——单一真源：每段英文原文作为 blockquote，其下紧接中文译文；
 2. **`<名称> 翻译(全中文).md`**（按需）——由脚本从对照文件派生；
@@ -159,3 +163,7 @@ en-zh-translation-polish/
 ## Star History
 
 [![Star History Chart](./assets/star-history.svg)](https://github.com/HoraceLuBFA/en-zh-translation-polish/stargazers)
+
+## 版本历史
+
+[v1.1.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0) 明确触发与交付范围，减少短文本任务中的无必要流程；详见 [CHANGELOG.md](./CHANGELOG.md)。首个公开版本 [v1.0.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0) 的标签、发布说明与源码历史保留。

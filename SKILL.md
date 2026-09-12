@@ -4,7 +4,7 @@ description: Translate English passages into natural Chinese or polish Chinese t
 license: MIT
 allowed-tools: Read Write Edit Bash
 metadata:
-  version: 1.0.0
+  version: 1.1.0
   tags: [translation, chinese, english-to-chinese, 英译汉, 润色, 中英对照, localization]
 ---
 

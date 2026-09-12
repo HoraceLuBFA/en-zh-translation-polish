@@ -5,7 +5,7 @@
 ### Translate English into idiomatic, translationese-free Chinese, with paragraph-by-paragraph bilingual output
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **English | [中文](./README.md)**
@@ -27,7 +27,7 @@ Good translation therefore rests on four principles:
 - **Play to Chinese's parataxis** — dismantle hypotaxis, trim connectives, turn passive into active, move long modifiers out of pre-noun position, break long sentences into a running flow;
 - **Mind rhythm and cadence** — use disyllables, four-character structures, and parallelism, but only as far as it stays natural.
 
-Every paragraph runs the full loop — *register → deverbalize → parataxis draft → symptom diagnosis → rhythm pass → accuracy QA → punctuation* — and is polished before it ships.
+The workflow supports text analysis, understanding, Chinese reconstruction, polishing, accuracy checks, and punctuation. Select relevant checks for the text type. Short passages do not require displaying every diagnostic stage or reading every reference table; accuracy and source fidelity still apply.
 
 ## What it's for
 
@@ -48,7 +48,7 @@ Bottom line: relaxing accuracy ≠ misunderstanding the source. **A misreading i
 
 ## Workflow
 
-Run in order; each paragraph completes every stage before delivery.
+The table describes the full workflow. Short passages can be delivered directly in chat; full-text and project translations retain the file-delivery contract. Honor an explicit request for Chinese-only text, bilingual output, or an existing destination file without asking again.
 
 | Stage | Name | What it does |
 |---|---|---|
@@ -101,7 +101,9 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 
 - "Translate this English into natural, idiomatic Chinese: …"
 - "Translate this article — I want an English-Chinese bilingual version."
-- "Please translate this tech paper / press release / novel into Chinese."
+- "Please translate this technical passage / press release / novel excerpt into Chinese."
+
+Use `pdf-paper-zh-translation` for complete papers that require figures, references, and document structure. This skill handles English passages and source-grounded polishing of existing Chinese translations.
 
 **Explicit command** — name the skill directly and pass a file or text as the argument:
 
@@ -116,6 +118,8 @@ $en-zh-translation-polish path/to/article.md
 > ⚠️ **Want Chinese only?** The skill **produces a bilingual file by default**. If you want the translation alone, say so explicitly in your prompt (e.g. "Chinese only, no English" / "output the translation only").
 
 ## Deliverables
+
+The following files are the default for full-text or project translations. Short chat passages can be returned in the reply; explicit monolingual, bilingual, or file-delivery requests take precedence.
 
 1. **`<name> 翻译(中英对照).md`** — the single source of truth: each English source paragraph as a blockquote, with the Chinese translation right below it;
 2. **`<name> 翻译(全中文).md`** (on request) — derived from the bilingual file by script;
@@ -156,3 +160,7 @@ The code, prompts, and structure of this skill are released under the **MIT Lice
 The methodology and worked examples are distilled and paraphrased from **Ye Zinan, 《高级英汉翻译理论与实践》 (Advanced Course in English-Chinese Translation, Fourth Edition), Tsinghua University Press, 2020**, with gratitude. The short quotations in `reference/` are brief excerpts for commentary and teaching; copyright remains with the author and publisher. This skill is a working tool, not a substitute for the book — readers who want to study the subject systematically should buy the original.
 
 This skill was generated with the help of [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills books into invokable AI skills — also gratefully acknowledged.
+
+## Version history
+
+[v1.1.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0) clarifies triggering and delivery scope, reducing unnecessary process for short passages. See [CHANGELOG.md](./CHANGELOG.md). The original [v1.0.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0) tag, release notes, and source history remain available.
