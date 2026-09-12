@@ -1,6 +1,6 @@
 ---
 name: en-zh-translation-polish
-description: Translate English passages into natural Chinese or polish Chinese translations against the source; supports bilingual output. Complete papers with figures and references use pdf-paper-zh-translation.
+description: Translate English passages into natural Chinese or polish Chinese translations against the source; supports bilingual output.
 license: MIT
 allowed-tools: Read Write Edit Bash
 metadata:
@@ -15,6 +15,10 @@ metadata:
 ## 按请求选择交付与检查范围
 
 聊天中的短段落翻译直接在回复中交付，用户要求文件时才落盘；全文或项目翻译沿用下述默认文件契约。用户明确选择纯译文、双语或已有目标文件时按其要求，不重复确认。先保留数字、术语、引文与限定条件，再按文体选择必要的润色检查；短文本不必逐项展示诊断过程或通读所有参考表。研究论文、文学和正式文件的专项边界继续适用。
+
+## 独立使用与文档输入
+
+本技能可独立安装使用，无需额外安装其他翻译技能。输入为 PDF 或其他文档时，先使用当前宿主可用的读取工具获取原文；保留用户要求的正文、图表说明、公式、引文和参考文献。无法可靠提取的内容应说明缺口，不将翻译任务转交给用户未安装的技能。
 
 ## 交付物
 

@@ -103,7 +103,7 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 - "Translate this article — I want an English-Chinese bilingual version."
 - "Please translate this technical passage / press release / novel excerpt into Chinese."
 
-Use `pdf-paper-zh-translation` for complete papers that require figures, references, and document structure. This skill handles English passages and source-grounded polishing of existing Chinese translations.
+This skill handles English texts and source-grounded polishing of existing Chinese translations. This skill can be installed and used independently, without another translation skill. For PDF or other document inputs, use the current host’s available reading tools to obtain the source. Preserve the requested text, captions, formulas, citations, and references. Report extraction gaps rather than handing the task to an uninstalled skill.
 
 **Explicit command** — name the skill directly and pass a file or text as the argument:
 
@@ -162,5 +162,6 @@ The methodology and worked examples are distilled and paraphrased from **Ye Zina
 This skill was generated with the help of [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills books into invokable AI skills — also gratefully acknowledged.
 
 ## Version history
+
 
 [v1.1.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0) clarifies triggering and delivery scope, reducing unnecessary process for short passages. See [CHANGELOG.md](./CHANGELOG.md). The original [v1.0.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0) tag, release notes, and source history remain available.

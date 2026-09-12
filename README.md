@@ -103,7 +103,7 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 - “翻译这篇英文短文，我要中英对照的版本。”
 - “请帮我翻译这段技术说明／新闻稿／小说片段。”
 
-需要处理图表、参考文献和完整结构的论文翻译，使用 `pdf-paper-zh-translation`。本技能用于英文段落翻译，以及对照英文原文润色已有中文译稿。
+本技能用于英文文本翻译，以及对照英文原文润色已有中文译稿。本技能可独立安装使用，无需额外安装其他翻译技能。输入为 PDF 或其他文档时，先使用当前宿主可用的读取工具获取原文；保留用户要求的正文、图表说明、公式、引文和参考文献。无法可靠提取的内容应说明缺口，不将翻译任务转交给用户未安装的技能。
 
 **命令显式调用**——直接点名本 skill，把文件或文本作为参数传入：
 
@@ -165,5 +165,6 @@ en-zh-translation-polish/
 [![Star History Chart](./assets/star-history.svg)](https://github.com/HoraceLuBFA/en-zh-translation-polish/stargazers)
 
 ## 版本历史
+
 
 [v1.1.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0) 明确触发与交付范围，减少短文本任务中的无必要流程；详见 [CHANGELOG.md](./CHANGELOG.md)。首个公开版本 [v1.0.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0) 的标签、发布说明与源码历史保留。
