@@ -1,21 +1,20 @@
 ---
 name: en-zh-translation-polish
-description: >-
-  Translates English into idiomatic, translationese-free Chinese, optionally as
-  an English-Chinese bilingual version pairing each source paragraph with its
-  translation. Use when the user wants to 翻译成中文 / 英译汉, 去翻译腔/润色译文
-  (remove translationese, polish a draft), or produce a 中英对照/英中对照 bilingual
-  rendering. Not for Chinese-to-English, pure Chinese writing polish, or
-  single-word lookups.
+description: Translate English passages into natural Chinese or polish Chinese translations against the source; supports bilingual output. Complete papers with figures and references use pdf-paper-zh-translation.
 license: MIT
-version: 1.0.0
-tags: [translation, chinese, english-to-chinese, 英译汉, 润色, 中英对照, localization]
 allowed-tools: Read Write Edit Bash
+metadata:
+  version: 1.0.0
+  tags: [translation, chinese, english-to-chinese, 英译汉, 润色, 中英对照, localization]
 ---
 
 # 英译汉翻译润色 (English→Chinese Translate & Polish)
 
 把英文译成**地道中文**并产出**英中对照**译文。核心信条（叶子南）：英译汉最致命的错误是把英语的“形合”结构迁移进汉语造成翻译腔；好译文 = **以读者为中心、按文本类型调节归化尺度、发挥汉语意合优势、兼顾音韵节奏**。
+
+## 按请求选择交付与检查范围
+
+聊天中的短段落翻译直接在回复中交付，用户要求文件时才落盘；全文或项目翻译沿用下述默认文件契约。用户明确选择纯译文、双语或已有目标文件时按其要求，不重复确认。先保留数字、术语、引文与限定条件，再按文体选择必要的润色检查；短文本不必逐项展示诊断过程或通读所有参考表。研究论文、文学和正式文件的专项边界继续适用。
 
 ## 交付物
 
