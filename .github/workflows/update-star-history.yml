@@ -19,6 +19,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
 
+      - name: Test chart generator
+        run: node --test scripts/update-star-history.test.mjs
+
       - name: Generate chart
         run: node scripts/update-star-history.mjs
         env:

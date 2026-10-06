@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+### Fixed / 修复
+
+- 修复 Star History 定时任务因 GitHub Star 总数与时间戳明细数量不一致而失败的问题。图表依据返回的有效时间戳生成，数量差异同时显示在图表与 workflow 警告中；缺失或无效时间戳及 API 请求失败仍会中止更新。
+- Fix scheduled Star History updates when GitHub's reported total differs from the timestamped stargazer list. Plot returned valid timestamps and disclose the difference in the chart and workflow warning; missing or invalid timestamps and API errors still stop the update.
+- 增加生成器回归测试，并在每次图表更新前执行。Run generator regression tests before each chart update.
+
 ## [1.1.0] - 2026-09-12
 
 ### Changed / 变更

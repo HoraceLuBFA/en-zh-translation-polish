@@ -64,7 +64,7 @@ function formatDate(milliseconds) {
   return new Date(milliseconds).toISOString().slice(0, 10);
 }
 
-function renderSvg(repo, createdAt, starredAt) {
+function renderSvg(repo, createdAt, starredAt, reportedStarCount) {
   const width = 900;
   const height = 520;
   const margin = { top: 76, right: 34, bottom: 66, left: 76 };
@@ -140,11 +140,14 @@ function renderSvg(repo, createdAt, starredAt) {
 
   const safeRepo = escapeXml(repo);
   const dateRange = `${formatDate(start)} to ${formatDate(end)}`;
+  const countNote = starCount === reportedStarCount
+    ? ""
+    : ` (${starCount} timestamped; GitHub total: ${reportedStarCount})`;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="title description">
   <title id="title">Star history for ${safeRepo}</title>
-  <desc id="description">${starCount} stars from ${dateRange}</desc>
+  <desc id="description">${starCount} timestamped stars from ${dateRange}. GitHub reports ${reportedStarCount} total stars.</desc>
   <style>
     :root { color-scheme: light dark; }
     .background { fill: #ffffff; }
@@ -168,7 +171,7 @@ function renderSvg(repo, createdAt, starredAt) {
   </style>
   <rect class="background" width="${width}" height="${height}" rx="10" />
   <text class="title" x="${margin.left}" y="34">Star History</text>
-  <text class="subtitle" x="${margin.left}" y="58">${safeRepo}</text>
+  <text class="subtitle" x="${margin.left}" y="58">${safeRepo}${countNote}</text>
   ${yGrid.join("\n  ")}
   ${xTicks.join("\n  ")}
   <path class="area" d="${area.join(" ")}" />
@@ -181,15 +184,22 @@ function renderSvg(repo, createdAt, starredAt) {
 
 const repositoryData = await github(`/repos/${repository}`);
 const stargazers = await listStargazers();
-const starredAt = stargazers.map((item) => item.starred_at).filter(Boolean);
+const starredAt = stargazers.map((item, index) => {
+  if (typeof item.starred_at !== "string" || !Number.isFinite(Date.parse(item.starred_at))) {
+    throw new Error(`Stargazer ${index + 1} has a missing or invalid starred_at timestamp.`);
+  }
+  return item.starred_at;
+});
 
+// Metadata and paginated stargazer responses are separate API snapshots.
+// Plot only returned timestamps; a count difference cannot supply missing dates.
 if (starredAt.length !== repositoryData.stargazers_count) {
-  throw new Error(
-    `Expected ${repositoryData.stargazers_count} timestamped stars, received ${starredAt.length}.`,
+  console.warn(
+    `::warning::GitHub reports ${repositoryData.stargazers_count} total stars, but returned ${starredAt.length} timestamped stars. The chart uses the returned timestamps.`,
   );
 }
 
-const svg = renderSvg(repository, repositoryData.created_at, starredAt);
+const svg = renderSvg(repository, repositoryData.created_at, starredAt, repositoryData.stargazers_count);
 await mkdir(dirname(outputPath), { recursive: true });
 await writeFile(outputPath, svg, "utf8");
 console.log(`Generated ${outputPath} with ${starredAt.length} stars.`);
