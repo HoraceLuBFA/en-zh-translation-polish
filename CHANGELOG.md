@@ -1,6 +1,16 @@
 # Changelog
 
-## Unreleased
+## [1.1.1] - 2026-10-07
+
+### Changed / 变更
+
+- 明确所有档位均以忠实性为前提；归化与“脱壳”只调整表达，混合文本按段落或信息功能判断。
+- 准确性质检采用原文覆盖与译文依据的双向核对，保留限定、逻辑、发言者及图注归属；长文按原有结构分批翻译与检查。
+- 校正参考表中的表达边界及节选译例，增加三组原创翻译质量回归样例；中英文 README 描述完整使用方式。
+
+- Make fidelity the prerequisite for every register; limit domestication and deverbalization to expression and assess mixed texts by information function.
+- Check source coverage and translation evidence in both directions, preserving qualifiers, logic, and attribution; translate and review long texts in sections.
+- Clarify reference guidance and excerpt examples, add three original translation-quality cases, and align both READMEs with the complete workflow.
 
 ### Fixed / 修复
 
@@ -32,5 +42,6 @@ The translation methodology, source-fidelity requirements, reference materials, 
 
 First public release: a translation and polishing workflow based on Ye Zinan's methodology, with text classification, three reference tables, bilingual delivery, Chinese and English documentation, and the MIT license. The original tag and GitHub Release are retained.
 
+[1.1.1]: https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.1
 [1.1.0]: https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0
 [1.0.0]: https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0

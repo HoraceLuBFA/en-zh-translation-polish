@@ -1,6 +1,6 @@
 {
   "skill": "en-zh-translation-polish",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "source_book": "高级英汉翻译理论与实践（第4版）— 叶子南",
   "test_cases": [
     {
@@ -75,5 +75,57 @@
     }
   ],
   "minimum_pass_rate": 0.8,
-  "notes": "4 条 should_trigger + 3 条 should_not_trigger + 3 条 edge_case。所有 should_not_trigger 必须通过（诱饵容错为 0），重点区分：中译英、纯中文润色、查词。PDF 英文论文属可处理的边界——载体不同，方向仍是英译汉，应接住而非排除。"
+  "quality_evaluation": {
+    "provenance": "以下三组为原创合成样例，人物、机构、产品及项目事实均为虚构。",
+    "procedure": "在独立会话中只向待测模型提供 skill、prompt 和 source，不提供验收条目或预期译文。保存实际输出，由评审者按原文与条目核对。记录运行日期、模型标识、宿主版本、skill 版本或提交、各用例结果及错误位置。",
+    "pass_condition": "原文意义完整传达，每组 must_preserve 全部满足，且无 must_not_add 所列问题或其他无依据事实，才算通过。措辞和句数可不同，流畅度不能抵销保真失败。三组须全部通过，不沿用触发测试的 0.8 门槛。静态格式检查不算模型运行通过。"
+  },
+  "quality_cases": [
+    {
+      "id": "quality-01-speaker-caption-attribution",
+      "prompt": "请翻译以下行业采访片段，保留标题、图注和发言者归属，输出中英对照。",
+      "source": "Mira Chen, pipeline supervisor at Nightbridge Visuals\n\n“We use FableGrid to check incoming assets. It flags naming errors; it does not judge artistic quality. Last quarter, our team reviewed 120 deliveries with it.”\n\nCaption: Red Harbor Labs used CinderKit to create the fire in its Tempest demo. The demo received a jury award in 2024.\n\nOwen Park, creative director at Red Harbor Labs\n\n“Tempest is an internal demo. We have not used CinderKit for final client shots.”",
+      "must_preserve": [
+        "Mira Chen 是 Nightbridge Visuals 的管线主管，Owen Park 是 Red Harbor Labs 的创意总监。",
+        "FableGrid 检查收到的资产、发现命名错误、不判断艺术质量；120 次交付审查发生在上个季度。",
+        "图注中的 Red Harbor Labs 使用 CinderKit 制作 Tempest 演示的火焰；该演示在 2024 年获得评审团奖。",
+        "Owen 表示 Tempest 是内部演示，CinderKit 尚未用于客户最终镜头。"
+      ],
+      "must_not_add": [
+        "不得将图注中的火焰制作和获奖信息移入 Mira 的发言，或将资产检查信息归给 Owen。",
+        "不得将内部演示写成正式上映作品、将尚未使用写成已用于交付，或补写未提供的奖项名称、客户与电影。"
+      ]
+    },
+    {
+      "id": "quality-02-entities-modality-conditions",
+      "prompt": "请将以下技术采访发言译为自然中文，完整保留产品名称、数字、列举及限定条件。",
+      "source": "“Since 2022, our team has used AeroFrame 2.4 with Slate and Nimbus. Slate handles look development and lighting; Nimbus handles procedural image processing. The system may reduce review time, but only if the input assets carry consistent metadata. We do not use it to approve final shots. In the pilot, it checked three items: file names, version numbers, and color-space tags.”",
+      "must_preserve": [
+        "使用从 2022 年开始；产品及版本为 AeroFrame 2.4、Slate、Nimbus，不能概括替代。",
+        "Slate 负责外观开发与布光，Nimbus 负责程序化图像处理，职责对应准确。",
+        "缩短审查时间只是可能效果；输入资产具有一致元数据是必要条件。",
+        "该团队不用此系统批准最终镜头；试点检查三项：文件名、版本号、色彩空间标签。"
+      ],
+      "must_not_add": [
+        "不得将可能性提升为保证，不得将必要条件写成效果必然发生的充分条件。",
+        "不得增加效率百分比、自动修复、色彩转换或其他功能，不得把该团队的做法扩大为普遍禁令或技术上不可能。"
+      ]
+    },
+    {
+      "id": "quality-03-metaphor-and-contrast",
+      "prompt": "请翻译以下访谈发言，保留原文态度、比喻作用和否定对比，中文可以自然改写。",
+      "source": "“The tool is a safety net, not an autopilot. It can catch some mistakes, but artists still decide what the audience should see. We are opening a door, not promising a revolution. For a small team, that extra room to experiment can matter more than raw speed.”",
+      "must_preserve": [
+        "安全网与自动驾驶的对比体现辅助兜底和自主决策的界限，允许恰当的中文等效表达。",
+        "工具能够发现一些错误，艺术家仍决定观众应看到什么。",
+        "开门与未承诺革命的对比体现开放尝试和克制承诺，否定不能改成递进肯定。",
+        "对小团队而言，更多试验空间可能比单纯速度更重要，保留对象与语气限定。"
+      ],
+      "must_not_add": [
+        "不得增写保证无错、工具自主决定画面或取代艺术家，也不得声称已经带来行业革命。",
+        "不得把可能判断扩大为所有团队普遍适用的定论，不得为固定中文句式删去否定或限定。"
+      ]
+    }
+  ],
+  "notes": "test_cases 含 4 条 should_trigger、3 条 should_not_trigger、3 条 edge_case；minimum_pass_rate 仅用于这组触发与范围测试，所有 should_not_trigger 必须通过。quality_cases 单独按语义评审，三组全部通过才满足质量门槛；小样例通过不代表所有模型或长文任务均已验证。"
 }

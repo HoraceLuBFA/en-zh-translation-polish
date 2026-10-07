@@ -2,10 +2,10 @@
 
 # en-zh-translation-polish
 
-### Translate English into idiomatic, translationese-free Chinese, with paragraph-by-paragraph bilingual output
+### Faithful English-to-Chinese translation in natural Chinese, with paragraph-by-paragraph bilingual output
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-f5c542.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.1.0-2ea44f.svg)](./SKILL.md)
+[![Version](https://img.shields.io/badge/version-1.1.1-2ea44f.svg)](./SKILL.md)
 [![Agent Skills](https://img.shields.io/badge/agent-skills-black.svg)](https://github.com/vercel-labs/skills)
 
 **English | [中文](./README.md)**
@@ -16,16 +16,12 @@
 
 ## Philosophy
 
-This skill turns the English-to-Chinese methodology of Ye Zinan's *Advanced Course in English-Chinese Translation (Fourth Edition)* (《高级英汉翻译理论与实践》) into an executable pipeline. One conviction sits at its core:
+This skill turns the English-to-Chinese methodology of Ye Zinan's *Advanced Course in English-Chinese Translation (Fourth Edition)* (《高级英汉翻译理论与实践》) into an executable translation and polishing workflow. It preserves the source completely and accurately, then removes translationese to produce fluent, natural Chinese.
 
-> The deadliest mistake in English-to-Chinese translation is carrying English's **hypotactic** (form-driven) structure into Chinese, which produces *translationese*.
-
-Good translation therefore rests on four principles:
-
-- **Reader-first** — communicative translation by default, so the Chinese reader meets fluent, natural Chinese;
-- **Domestication tuned to the text** — hard texts (law / tech / contracts) put accuracy first and intervene sparingly; soft texts (essays / commentary / ads) lean into Chinese's parataxis and idiom;
-- **Play to Chinese's parataxis** — dismantle hypotaxis, trim connectives, turn passive into active, move long modifiers out of pre-noun position, break long sentences into a running flow;
-- **Mind rhythm and cadence** — use disyllables, four-character structures, and parallelism, but only as far as it stays natural.
+- **Fidelity first**: preserve facts, logic, conditions, attribution, and strength of claims. Domestication changes expression only.
+- **Expression tuned to the text**: intervene sparingly in law, technology, and contracts; handle syntax and rhetoric more flexibly in essays and commentary. Assess interviews and industry roundups by paragraph or information function.
+- **Play to Chinese's parataxis**: split long sentences, trim redundant connectives, and adjust passives and long modifiers while preserving their relationships.
+- **Mind rhythm and cadence**: use disyllables, four-character structures, and parallelism in moderation, preserving the function of the source's rhetoric.
 
 The workflow supports text analysis, understanding, Chinese reconstruction, polishing, accuracy checks, and punctuation. Select relevant checks for the text type. Short passages do not require displaying every diagnostic stage or reading every reference table; accuracy and source fidelity still apply.
 
@@ -34,17 +30,18 @@ The workflow supports text analysis, understanding, Chinese reconstruction, poli
 - **Removing translationese from MT and literal drafts** — hypotaxis transfer, the runaway "的" particle, abstract-noun subjects, overused passives, literally-rendered idioms: each is named and fixed;
 - **A consistent editing standard** — three verifiable reference tables fix *what to change, how, and how far* into reusable criteria;
 - **Maintaining bilingual versions** — the bilingual file is the single source of truth; the Chinese-only version is derived by script, so the two never drift;
-- **Correct Chinese punctuation** — a built-in normalizer leaves zero half-width residue in the Chinese text, while English, links, numbers, and code are untouched.
+- **Checking completeness**: compare source and translation in both directions for omissions, unsupported additions, conditions, and attribution; translate and check long texts in sections.
+- **Chinese punctuation**: normalize punctuation and check for residue, preserving source English, links, and other protected content according to the workflow.
 
 ## Boundaries
 
-Method serves the translation, not the other way around. Two cautions from Ye Zinan:
+The method serves the translation. Domestication and polishing follow these boundaries:
 
 - **Domesticate in moderation** — keep the source's style, terminological precision, and cultural markers; foreignization is a continuum, and hard / lasting-value texts tolerate more of it;
 - **Restrain ornament** — rhythm is a means, not an end; four-character phrases are used sparingly;
 - When unsure how far to go, return to the Stage 0 register: the lower the freedom, the more restraint.
 
-Bottom line: relaxing accuracy ≠ misunderstanding the source. **A misreading is never forgivable.**
+Every register requires a complete, accurate rendering of the source. Outside knowledge may resolve ambiguity but must not become an added source claim. Preserve the function of existing metaphors, exaggeration, and personal voice without intensifying them. When the user explicitly requests a summary, abridgment, or adaptation, honor that scope and identify the treatment.
 
 ## Workflow
 
@@ -52,14 +49,16 @@ The table describes the full workflow. Short passages can be delivered directly 
 
 | Stage | Name | What it does |
 |---|---|---|
-| 0 | Text analysis & register | Judge soft/hard, Newmark type, freedom 1–10; set the domestication level |
-| 1 | Deverbalization | Drop the English wording, form meaning/imagery, rebuild in Chinese |
-| 2 | Parataxis-first draft | Break long sentences, trim connectives, passive→active, front-load modifiers |
+| 0 | Text analysis & register | Assess text type and expressive freedom (1–10); judge mixed texts by paragraph or information function |
+| 1 | Deverbalization | Resolve facts, references, negation, conditions, and tone; rebuild the syntax in Chinese |
+| 2 | Parataxis-first draft | Split long sentences, trim redundant connectives, and adjust passives and long modifiers |
 | 3 | Polishing diagnosis | Run three tables: translationese symptoms / techniques / metaphor decisions |
 | 4 | Rhythm & cadence | Disyllables / four-character / parallelism; loosen for soft texts, restrain for hard |
-| 5 | Accuracy QA | Structure, modality, added/dropped words, collocation, reference, terms, register |
+| 5 | Accuracy QA | Check source coverage and trace translation claims back to their source; verify logic, attribution, terms, and tone |
 | 6 | Chinese punctuation normalization | Script normalizes full-width punctuation; self-check residue = 0 |
 | 7 | Bilingual output | Pair paragraphs, append a one-line "register + main trade-offs" note |
+
+Process long texts, multi-speaker interviews, and interleaved text and captions in sections that follow the source structure. After assembly, check order, missing passages, and terminology. Source quotations, paragraph counts, and punctuation checks do not replace semantic review.
 
 Three reference tables back the workflow (in `reference/`, each with source quotations and worked English–Chinese examples):
 
@@ -75,7 +74,7 @@ Three reference tables back the workflow (in `reference/`, each with source quot
 npx skills add -g HoraceLuBFA/en-zh-translation-polish
 ```
 
-> [`npx skills`](https://github.com/vercel-labs/skills) installs the skill into `~/.agents/skills/` — the shared skill directory read by multiple agents — and wires up each agent's symlinks automatically.
+> [`npx skills`](https://github.com/vercel-labs/skills) configures skill entry points for the selected agents. Confirm availability in the skill list of the host you use.
 
 **Option 2 · Let your agent install it**
 
@@ -148,7 +147,7 @@ en-zh-translation-polish/
 │   ├── text-analysis-and-qa.md    # Text typing + metaphor + accuracy QA
 │   ├── translationese-symptoms.md # Translationese symptoms + prosody + foreignization limits
 │   └── techniques.md              # 14 actionable techniques
-├── test-prompts.json              # Trigger / decoy / edge-case test cases
+├── test-prompts.json              # Trigger / decoy / edge-case and translation-quality cases
 ├── LICENSE
 └── .gitignore
 ```
@@ -161,7 +160,6 @@ The methodology and worked examples are distilled and paraphrased from **Ye Zina
 
 This skill was generated with the help of [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills books into invokable AI skills — also gratefully acknowledged.
 
-## Version history
+## Versions and updates
 
-
-[v1.1.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.0) clarifies triggering and delivery scope, reducing unnecessary process for short passages. See [CHANGELOG.md](./CHANGELOG.md). The original [v1.0.0](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.0.0) tag, release notes, and source history remain available.
+Current version: [v1.1.1](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases/tag/v1.1.1). See [Releases](https://github.com/HoraceLuBFA/en-zh-translation-polish/releases) for release notes and past versions, and [CHANGELOG.md](./CHANGELOG.md) for details.
