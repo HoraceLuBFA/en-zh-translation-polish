@@ -94,6 +94,14 @@ git clone https://github.com/HoraceLuBFA/en-zh-translation-polish.git ~/.agents/
 test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 ```
 
+### 官网完整包与安装指南
+
+[官网详情页](https://www.lumenghe.com/skills/en-zh-translation-polish/)提供完整 ZIP、打包日期、来源提交、SHA-256 和本 README；[发布元数据](https://www.lumenghe.com/skills/en-zh-translation-polish/release.json)记录当前官网包。GitHub 与官网共同提供安装入口。
+
+> 请先读取 https://www.lumenghe.com/skills/en-zh-translation-polish/ 及其安装指南，再为当前宿主安装 `en-zh-translation-polish`。检查已有安装并保留本地修改，校验 ZIP 的 SHA-256，完成后报告安装的来源提交与宿主发现结果。
+
+[INSTALL.md](./INSTALL.md)列明路径检查、安全解压、共享安装目录、宿主发现、依赖与验证步骤；[纯文本指南](https://www.lumenghe.com/skills/en-zh-translation-polish/install.txt)另附当前下载链接和校验值。技能文件保留在 `~/.agents/skills/en-zh-translation-polish/`，宿主入口按指南配置。官网 ZIP 与所标示来源提交使用相同的技能文件和文档。文档同步日期为 **2026-11-10**，功能版本沿用原有标识。
+
 ## 使用方式
 
 **自然语言**——直接提出需求即可，支持自动触发的 agent 会据 `SKILL.md` 的 `description` 字段加载本 skill。常见说法：
@@ -160,6 +168,8 @@ en-zh-translation-polish/
 本 skill 借助 [cangjie-skill](https://github.com/kangarooking/cangjie-skill)（将书籍方法论蒸馏为可调用 AI skill 的开源拆书流水线）生成，一并致谢。
 
 ## Star History
+
+下图为截至 **2026-10-12** 的历史快照；当前数量可在 GitHub 仓库查看。
 
 [![Star History Chart](./assets/star-history.svg)](https://github.com/HoraceLuBFA/en-zh-translation-polish/stargazers)
 

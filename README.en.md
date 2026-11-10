@@ -94,6 +94,14 @@ Verify:
 test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 ```
 
+### Website package and installation guide
+
+The [official detail page](https://www.lumenghe.com/en/skills/en-zh-translation-polish/) provides the complete ZIP, package date, source commit, SHA-256, and this README. [Release metadata](https://www.lumenghe.com/skills/en-zh-translation-polish/release.json) identifies the current website package; GitHub and the website provide complementary installation routes.
+
+> Read https://www.lumenghe.com/en/skills/en-zh-translation-polish/ and its installation guide, then install `en-zh-translation-polish` for my current host. Check the existing installation and preserve local changes, verify the ZIP's SHA-256, and report the installed source commit and host discovery result.
+
+See [INSTALL.en.md](./INSTALL.en.md) for path inspection, safe extraction, the shared installation directory, host discovery, dependencies, and verification. The [plain-text guide](https://www.lumenghe.com/en/skills/en-zh-translation-polish/install.txt) includes the exact download URL and checksum. Keep files under `~/.agents/skills/en-zh-translation-polish/`; configure a host-specific entry as described in the guide. The website ZIP and the stated source commit contain the same skill files and documentation. Documentation synchronized on **2026-11-10**; existing functional version identifiers are retained.
+
 ## Usage
 
 **Natural language** — just state what you want; agents that auto-trigger will load the skill from the `description` field in `SKILL.md`. Common phrasings:
