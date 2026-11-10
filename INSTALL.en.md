@@ -1,29 +1,20 @@
 # en-zh-translation-polish installation guide
 
-Source repository: https://github.com/HoraceLuBFA/en-zh-translation-polish
-Detail page: https://www.lumenghe.com/en/skills/en-zh-translation-polish/
-Release metadata: https://www.lumenghe.com/skills/en-zh-translation-polish/release.json
-Current package and checksum: https://www.lumenghe.com/en/skills/en-zh-translation-polish/install.txt
+[GitHub repository](https://github.com/HoraceLuBFA/en-zh-translation-polish) · [Detail page](https://www.lumenghe.com/en/skills/en-zh-translation-polish/)
 
-Use the detail page or release metadata to select the version, source commit, ZIP URL, and SHA-256. Record these values together before downloading. Follow this guide within the user's authorization and preserve existing installations and local changes.
+## Install from GitHub
 
-## Before installation
+1. **Check prerequisites.** An Agent Skills host; Python 3 for punctuation processing.
+2. **Inspect the existing installation.** Check `~/.agents/skills/en-zh-translation-polish/` and the host's same-named entry, including directories, files, symlinks and broken links. Preserve the existing version and local changes before an update. Use the README's GitHub installation command for a new installation; review and merge changes when updating an existing checkout.
 
-1. Identify the operating system, coding agent, and host; read the README and prerequisites. Confirm that the current host supports Agent Skills and check Python 3 availability. This skill works independently and does not require the other translation skill. Script checks do not establish real translation quality.
-2. Inspect ~/.agents/skills/en-zh-translation-polish and same-named host entries without modifying them, including files, directories, symlinks, and broken symlinks. If an installation exists, report its version and local changes. Back it up and let the user choose how to merge or replace it; never silently overwrite, delete, or reset it. Do not alter unrelated host settings, other skills, or existing authentication.
-3. Download the complete ZIP from the HTTPS download URL in the selected release metadata into a temporary working directory. Compute its SHA-256 and compare it exactly with the current site release information. Stop if the digest is missing, still a template placeholder, or different. The README also provides GitHub installation routes; use the route selected for this installation.
+## Install the website ZIP
 
-## Extract and install
+3. **Select and verify the package.** [Release metadata](https://www.lumenghe.com/skills/en-zh-translation-polish/release.json) lists the source commit, ZIP URL and SHA-256. Download into a temporary directory and compare the checksum. Inspect member paths: one `en-zh-translation-polish/` root, relative paths within it, and safe link destinations. Stop installation if checksum or path validation fails.
+4. **Place the complete skill.** Extract `SKILL.md`, README, installation guides, license, scripts and reference files together into `~/.agents/skills/en-zh-translation-polish/`, preserving directory structure and executable permissions. For an existing installation, retain its backup and apply the reviewed merge or replacement.
 
-4. Inspect ZIP member paths before extraction. Require a single en-zh-translation-polish/ root directory; reject absolute paths, .. traversal, and links that would write outside the destination. The complete package must contain en-zh-translation-polish/SKILL.md, README.md, README.en.md, LICENSE, and the original supporting scripts and references. Do not download SKILL.md alone.
-5. Extract into a temporary directory and inspect the file list. Preserve relative structure and executable permissions; do not install an extra en-zh-translation-polish/en-zh-translation-polish/ nesting level. After confirming that the target does not exist, place the complete en-zh-translation-polish/ folder at ~/.agents/skills/en-zh-translation-polish/. Existing instructions and scripts refer to this canonical shared path, so do not relocate it casually.
-6. Configure discovery for the actual host. Codex reads personal skills from ~/.agents/skills; Claude Code reads personal entries from ~/.claude/skills. Only when ~/.claude/skills/en-zh-translation-polish does not exist and is not a broken symlink, create a symlink pointing to ~/.agents/skills/en-zh-translation-polish. Inspect and report existing entries instead of replacing them. Follow current official documentation for other hosts; do not claim every agent automatically scans the shared directory.
+## Configure and verify
 
-## Verify and report
+5. **Configure the host entry.** Codex uses the shared `~/.agents/skills/` directory. Claude Code uses `~/.claude/skills/`; inspect its entry and create a symlink to the shared skill when that path is free. Follow the current host documentation for other agents. Keep changes within this skill and its discovery entry; interactive authentication stays with the user.
+6. **Verify and report.** Check `SKILL.md`, supporting files and dependencies; confirm discovery in the host's skill list or a new session. Use a temporary sample for any requested behavior check. Report the installation path, source commit, dependency and discovery results, checks performed and retained backup.
 
-7. Check that SKILL.md and the required scripts and references are readable, with the necessary executable permissions. Confirm discovery through the host's skill list, an explicit invocation, or a new session. Distinguish files installed, skill discovered, dependencies ready, and a real task accepted; report only the checks actually performed. Use a minimal example that does not modify the user’s originals for any behavior that needs testing.
-8. Report the installation directory, source version and commit, downloaded checksum, discovery result, missing dependencies, and any backup location retained for an existing installation. Do not expose authentication values. Leave any interactive sign-in to the user.
-
-Discovery references:
-- Official OpenAI documentation: https://learn.chatgpt.com/docs/build-skills
-- Claude Code documentation: https://code.claude.com/docs/en/skills
+The [plain-text website guide](https://www.lumenghe.com/en/skills/en-zh-translation-polish/install.txt) includes the current package URL and checksum.

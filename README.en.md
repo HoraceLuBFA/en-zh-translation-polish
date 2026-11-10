@@ -23,7 +23,7 @@ This skill turns the English-to-Chinese methodology of Ye Zinan's *Advanced Cour
 - **Play to Chinese's parataxis**: split long sentences, trim redundant connectives, and adjust passives and long modifiers while preserving their relationships.
 - **Mind rhythm and cadence**: use disyllables, four-character structures, and parallelism in moderation, preserving the function of the source's rhetoric.
 
-The workflow supports text analysis, understanding, Chinese reconstruction, polishing, accuracy checks, and punctuation. Select relevant checks for the text type. Short passages do not require displaying every diagnostic stage or reading every reference table; accuracy and source fidelity still apply.
+The workflow supports text analysis, understanding, Chinese reconstruction, polishing, accuracy checks, and punctuation. Select relevant checks for the text type. For short passages, select the relevant checks and focus on accuracy and source fidelity.
 
 ## What it's for
 
@@ -41,7 +41,7 @@ The method serves the translation. Domestication and polishing follow these boun
 - **Restrain ornament** — rhythm is a means, not an end; four-character phrases are used sparingly;
 - When unsure how far to go, return to the Stage 0 register: the lower the freedom, the more restraint.
 
-Every register requires a complete, accurate rendering of the source. Outside knowledge may resolve ambiguity but must not become an added source claim. Preserve the function of existing metaphors, exaggeration, and personal voice without intensifying them. When the user explicitly requests a summary, abridgment, or adaptation, honor that scope and identify the treatment.
+Every register requires a complete, accurate rendering of the source. Use outside knowledge to resolve ambiguity and ground translated claims in the source. Preserve the function and strength of metaphors, exaggeration, and personal voice. When the user explicitly requests a summary, abridgment, or adaptation, honor that scope and identify the treatment.
 
 ## Workflow
 
@@ -58,7 +58,7 @@ The table describes the full workflow. Short passages can be delivered directly 
 | 6 | Chinese punctuation normalization | Script normalizes full-width punctuation; self-check residue = 0 |
 | 7 | Bilingual output | Pair paragraphs, append a one-line "register + main trade-offs" note |
 
-Process long texts, multi-speaker interviews, and interleaved text and captions in sections that follow the source structure. After assembly, check order, missing passages, and terminology. Source quotations, paragraph counts, and punctuation checks do not replace semantic review.
+Process long texts, multi-speaker interviews, and interleaved text and captions in sections that follow the source structure. After assembly, check order, missing passages, and terminology. Review meaning section by section, along with quotations, paragraph counts, and punctuation.
 
 Three reference tables back the workflow (in `reference/`, each with source quotations and worked English–Chinese examples):
 
@@ -96,11 +96,7 @@ test -f ~/.agents/skills/en-zh-translation-polish/SKILL.md && echo OK
 
 ### Website package and installation guide
 
-The [official detail page](https://www.lumenghe.com/en/skills/en-zh-translation-polish/) provides the complete ZIP, package date, source commit, SHA-256, and this README. [Release metadata](https://www.lumenghe.com/skills/en-zh-translation-polish/release.json) identifies the current website package; GitHub and the website provide complementary installation routes.
-
-> Read https://www.lumenghe.com/en/skills/en-zh-translation-polish/ and its installation guide, then install `en-zh-translation-polish` for my current host. Check the existing installation and preserve local changes, verify the ZIP's SHA-256, and report the installed source commit and host discovery result.
-
-See [INSTALL.en.md](./INSTALL.en.md) for path inspection, safe extraction, the shared installation directory, host discovery, dependencies, and verification. The [plain-text guide](https://www.lumenghe.com/en/skills/en-zh-translation-polish/install.txt) includes the exact download URL and checksum. Keep files under `~/.agents/skills/en-zh-translation-polish/`; configure a host-specific entry as described in the guide. The website ZIP and the stated source commit contain the same skill files and documentation. Documentation synchronized on **2026-11-10**; existing functional version identifiers are retained.
+The [detail page](https://www.lumenghe.com/en/skills/en-zh-translation-polish/) provides bilingual documentation and a complete ZIP. See [INSTALL.en.md](./INSTALL.en.md) for installation and verification; the [plain-text guide](https://www.lumenghe.com/en/skills/en-zh-translation-polish/install.txt) lists the current package URL and SHA-256. Package files match the stated GitHub source commit.
 
 ## Usage
 
@@ -110,7 +106,7 @@ See [INSTALL.en.md](./INSTALL.en.md) for path inspection, safe extraction, the s
 - "Translate this article — I want an English-Chinese bilingual version."
 - "Please translate this technical passage / press release / novel excerpt into Chinese."
 
-This skill handles English texts and source-grounded polishing of existing Chinese translations. This skill can be installed and used independently, without another translation skill. For PDF or other document inputs, use the current host’s available reading tools to obtain the source. Preserve the requested text, captions, formulas, citations, and references. Report extraction gaps rather than handing the task to an uninstalled skill.
+This skill handles English texts and source-grounded polishing of existing Chinese translations. This skill supports independent installation and use. For PDF or other document inputs, use the current host’s available reading tools to obtain the source. Preserve the requested text, captions, formulas, citations, and references. Identify extraction gaps and continue with the tools available in the current host.
 
 **Explicit command** — name the skill directly and pass a file or text as the argument:
 
@@ -164,7 +160,7 @@ en-zh-translation-polish/
 
 The code, prompts, and structure of this skill are released under the **MIT License** — free to use, modify, and redistribute. See [LICENSE](./LICENSE).
 
-The methodology and worked examples are distilled and paraphrased from **Ye Zinan, 《高级英汉翻译理论与实践》 (Advanced Course in English-Chinese Translation, Fourth Edition), Tsinghua University Press, 2020**, with gratitude. The short quotations in `reference/` are brief excerpts for commentary and teaching; copyright remains with the author and publisher. This skill is a working tool, not a substitute for the book — readers who want to study the subject systematically should buy the original.
+The methodology and worked examples are distilled and paraphrased from **Ye Zinan, 《高级英汉翻译理论与实践》 (Advanced Course in English-Chinese Translation, Fourth Edition), Tsinghua University Press, 2020**, with gratitude. The short quotations in `reference/` are brief excerpts for commentary and teaching; copyright remains with the author and publisher. For systematic study, consult the original book.
 
 This skill was generated with the help of [cangjie-skill](https://github.com/kangarooking/cangjie-skill), an open-source pipeline that distills books into invokable AI skills — also gratefully acknowledged.
 
